@@ -23,7 +23,7 @@ print("the web server is up on port:", serverPort)
 
 while True:
     # Establish the connection
-    # print('Ready to serve...')
+    # print('helloworld.html...')
     connectionSocket, addr = serverScoket.accept()  # Fill in start      #Fill in end
     try:
 
@@ -56,8 +56,8 @@ while True:
         connectionSocket.close()
         # Fill in end
 
-        except(ConnectionResetError, BrokenPipeError):
-pass
+    except(ConnectionResetError, BrokenPipeError):
+    pass
 
  serverSocket.close()
 sys.exit()  # Terminate the program after sending the corresponding data

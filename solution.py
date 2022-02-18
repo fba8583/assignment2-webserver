@@ -10,7 +10,7 @@ import socket
 
 
 def webServer(port=13331):
-    serverSocket = socket(AF_INET, SOCK_STREAM)
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Prepare a server socket
     serverSocket.bind(("13331", port))
@@ -24,14 +24,18 @@ print("the web server is up on port:", serverPort)
 while True:
     # Establish the connection
     # print('helloworld.html...')
-    connectionSocket, addr = serverScoket.accept()  # Fill in start      #Fill in end
+    connectionSocket, addr = (server, port)
+    # Fill in start
+    server.bind(addr)
+
+    # #Fill in end
     try:
 
         try:
             message = connectionSocket.recv(1024)  # Fill in start    #Fill in end
             filename = message.split()[1]
             f = open(filename[1:])
-    outputdata = f.read  # Fill in start     #Fill in end
+           outputdata = (f.read())  # Fill in start     #Fill in end
         print(outputdata)
 
         # Send one HTTP header line into socket.
